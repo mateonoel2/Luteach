@@ -7,29 +7,9 @@ from flaskblog.models import Post, User
 from flaskblog import app, db, bcrypt
 from flask_login import login_user, current_user, logout_user, login_required
 
-
-posts =[
-    {
-        'author': 'Nicolas',
-        'title': 'Blog Post 1',
-        'Content': 'First post content',
-        'date_posted': 'April 20,2018'
-
-    },
-
-    {
-        'author': 'Fabrizio',
-        'title': 'Blog Post 2',
-        'Content': 'second post content',
-        'date_posted': 'november 20,2018'
-
-    }
-
-]
-
 @app.route("/")
 def home():
-    return render_template('home.html', posts=posts)
+    return render_template('home.html')
 
 @app.route("/services")
 def services():
